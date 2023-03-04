@@ -3,7 +3,7 @@ from abc import ABC
 
 class StorageInterface(ABC):
     @classmethod
-    def update(cls, path: str):
+    def update(cls, from_: str, to: str):
         raise NotImplementedError()
 
     @classmethod
@@ -11,9 +11,9 @@ class StorageInterface(ABC):
         raise NotImplementedError()
 
     @classmethod
-    def create(cls, path: str, obj):
+    def create(cls, from_: str, to: str):
         raise NotImplementedError()
 
     @classmethod
-    def read(cls, path: str):
+    def read(cls, from_: str, to: str):
         raise NotImplementedError()

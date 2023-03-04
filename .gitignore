@@ -24,5 +24,10 @@
 # Go workspace file
 go.work
 
-common/configs/env.yml
 # End of https://www.toptal.com/developers/gitignore/api/go
+
+# config files.
+common/configs/env.yml
+
+# dist files.
+python/dest/
