@@ -5,7 +5,8 @@ from asset_control.core import AssetControllerInterface
 
 class FixedRiskController(AssetControllerInterface):
     def __init__(self, num_unit: int, trade_risk: float, initial_balance: float):
-        """Fixed risk,
+        """Fixed risk.
+
         Args:
             num_unit: fixed unit amount.
                 How many you want to trade, assuming you keep losing.

@@ -14,7 +14,6 @@ class StorageConfigure(StorageInterface):
     _storage_impl: StorageInterface
 
     def __new__(cls, *args, **kargs):
-        logger.info("call __new__")
         if not hasattr(cls, "_instance"):
             cls._instance = super(StorageConfigure, cls).__new__(cls)
             # configure storage type and setting on read storage module.
@@ -64,7 +63,6 @@ def delete(path: str):
 
 
 if __name__ == '__main__':
-
     a = create("test.html", "public/test.html")
     a = read("test/sample.json", "read.json")
     a = delete("test/sample.json")
