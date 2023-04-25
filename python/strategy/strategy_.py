@@ -3,6 +3,7 @@ from typing import List
 
 import pandas as pd
 
+from env.env_ import Environment
 from order.order_ import Order
 
 
@@ -21,13 +22,13 @@ class Strategy(ABC):
         self.parameters = parameters
 
     @abstractmethod
-    def order(self, data: pd.DataFrame) -> List[Order]:
+    def order(self, env: Environment) -> List[Order]:
         """Estimate.
 
         Args:
-            data:
+            env: Environment
 
         Returns:
-
+                orders list.
         """
         raise NotImplementedError()

@@ -6,7 +6,7 @@ from strategy.strategy_ import Strategy
 
 class GoldenCross(Strategy):
 
-    def order(self, data):
+    def order(self, env):
         return Order()
 
 
