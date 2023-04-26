@@ -4,6 +4,12 @@ from strategy.strategy_ import Strategy
 
 
 class Runner:
+    """Runner class.
+
+    Notes:
+        This method has the below
+
+    """
     def __init__(self, env: Environment, strategy: Strategy, broker: Broker):
         self._broker = broker
         self._strategy = strategy

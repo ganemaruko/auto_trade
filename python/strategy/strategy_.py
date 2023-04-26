@@ -1,22 +1,18 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-import pandas as pd
-
 from env.env_ import Environment
 from order.order_ import Order
 
 
 class Strategy(ABC):
-    """Strategy.
+    """Strategy."""
 
-    """
-
-    def __init__(self, parameters):
+    def __init__(self, parameters: dict):
         """
 
         Args:
-            parameters:
+            parameters: strategy parameters, used in optimization.
 
         """
         self.parameters = parameters
