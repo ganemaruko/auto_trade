@@ -7,10 +7,11 @@ Welcome to auto_trade's documentation!
 ======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 10
    :caption: Contents:
 
-   ./_apis/logger.rst
+   /_apis/modules
+
 
 Indices and tables
 ==================
@@ -18,3 +19,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+Modules
+==================

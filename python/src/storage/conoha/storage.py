@@ -66,10 +66,11 @@ class ConohaStorage(StorageInterface):
         return os.path.join(self.from_root, path)
 
     def get_full_path_remote(self, path: str) -> str:
-        """Create full path.
+        r"""Create full path.
+
         Args:
-            path: such as "test/sample.json"
-                conoha server is linux, so please use "/", not "\".
+            path: such as "test/sample.json".
+            conoha server is linux, so please use "/", not "\".
 
         Returns:
             str such as "/home/c0000000/public_html/DOMAIN/test/sample.json
