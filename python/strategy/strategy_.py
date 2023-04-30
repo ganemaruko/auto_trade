@@ -17,14 +17,45 @@ class Strategy(ABC):
         """
         self.parameters = parameters
 
-    @abstractmethod
-    def order(self, env: Environment) -> List[Order]:
-        """Estimate.
+    def propose(self, env: Environment) -> List[Order]:
+        """Analyze the given environment and suggest orders.
 
         Args:
-            env: Environment
+            env: Environment.
+
+        Notes:
+            - This method is implemented by 'Template pattern'.
 
         Returns:
                 orders list.
+        """
+
+    @abstractmethod
+    def order(self, env: Environment) -> List[Order]:
+        """Analyze the given environment and suggest orders.
+
+        Args:
+            env: Environment.
+
+        Notes:
+            - This method is called by 'propose' function.
+
+        Returns:
+                orders list.
+        """
+        raise NotImplementedError()
+
+    @abstractmethod
+    def validate(self, env: Environment):
+        """Validate the given environment.
+
+        Args:
+            env: Environment.
+
+        Notes:
+            - This function should be implemented to make explicit the elements required for env.
+
+        Raises:
+            ValidationError
         """
         raise NotImplementedError()

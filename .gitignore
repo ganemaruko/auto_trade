@@ -31,3 +31,6 @@ common/configs/env.yml
 
 # dist files.
 python/dest/
+
+python/docs/build/
+python/docs/source/_apis
