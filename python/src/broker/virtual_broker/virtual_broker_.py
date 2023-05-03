@@ -8,7 +8,8 @@ from src.order.order_ import Order
 
 class VirtualBroker(Broker):
     def __init__(self):
-        self.accounts: List[VirtualAccount] =  
+        super().__init__()
+        self.accounts: List[VirtualAccount]
 
     def take_order(self, order: Order) -> OrderResult:
         pass

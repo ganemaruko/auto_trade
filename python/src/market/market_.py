@@ -7,8 +7,8 @@ from src.core.logger import create_logger
 logger = create_logger(__name__)
 
 
-class Market(ABC):
-    """Market abstract class.
+class Market:
+    """Market class.
 
     Notes:
         Market class has the following responsibility.

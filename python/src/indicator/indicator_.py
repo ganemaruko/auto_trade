@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 import pandas as pd
 
@@ -12,5 +12,14 @@ class Indicator(ABC):
 
     """
 
-    def __call__(self, df: pd.DataFrame):
-        pass
+    @abstractmethod
+    def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Main method of Indicator.
+
+        Args:
+            df: pd.DataFrame.
+
+        Returns:
+            indicator values.
+        """
+        raise NotImplementedError()

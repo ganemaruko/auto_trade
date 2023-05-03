@@ -29,6 +29,8 @@ class Strategy(ABC):
         Returns:
                 orders list.
         """
+        self.validate(env)
+        return self.order(env)
 
     @abstractmethod
     def order(self, env: Environment) -> List[Order]:
