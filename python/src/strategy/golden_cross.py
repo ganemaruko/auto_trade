@@ -5,6 +5,7 @@ from src.core.logger import create_logger
 from src.indicator.moving_average import MA
 from src.order.order_ import Order
 from src.strategy.strategy_ import Strategy
+from src.util.math import cross
 
 logger = create_logger(__name__)
 
@@ -24,8 +25,17 @@ class GoldenCross(Strategy):
 
     def order(self, env) -> List[Order]:
         data = env.get_market().get_data()
-
-        return Order()
+        ma_small = self.ma_small(data)
+        ma_large = self.ma_large(data)
+        logger.info(ma_small.values)
+        logger.info(ma_large.values)
+        cross_value = cross(ma_small.values, ma_large.values)
+        if cross_value == 1:
+            return [Order()]
+        elif cross_value == -1:
+            return [Order()]
+        else:
+            return []
 
     def validate(self, env):
         if self.target_col not in env.get_market().get_data().columns:

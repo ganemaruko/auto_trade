@@ -30,10 +30,11 @@ def test_validate():
 
 
 def test_order():
+    """Test order method."""
     dummy_data = pd.DataFrame(
-        {"CLOSE": range(30)}
+        {"CLOSE": [4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6]}
     )
-    golden_cross = GoldenCross(target_col="CLOSE", large_window_=20, small_window_=5)
+    golden_cross = GoldenCross(target_col="CLOSE", large_window_=10, small_window_=3)
     broker = VirtualBroker()
     market = Market(
         data=dummy_data
@@ -43,4 +44,4 @@ def test_order():
         broker=broker
     )
     orders = golden_cross.order(env)
-    assert len(orders) == 0
+    assert 1 == len(orders)
