@@ -9,6 +9,8 @@ from src.strategy.golden_cross import GoldenCross
 
 
 def test_validate():
+    """Test validate function."""
+
     dummy_data = pd.DataFrame(
         {"OPEN": [
             1, 2, 3, 4, 5
