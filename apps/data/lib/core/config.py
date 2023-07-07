@@ -1,3 +1,4 @@
+import os
 from functools import lru_cache
 
 import yaml
@@ -16,7 +17,7 @@ def _read_yaml(file_name: str) -> dict:
     Returns:
         config: yaml file.
     """
-    with open(f'./../../config/{file_name}.yml', 'r') as f:
+    with open(os.path.join(os.path.dirname(__file__), f'./../../config/{file_name}.yml'), 'r') as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
     return config
 

@@ -1,4 +1,5 @@
 import logging
+import os.path
 from logging.handlers import RotatingFileHandler
 
 
@@ -13,7 +14,7 @@ def get_my_logger(name: str) -> logging.Logger:
 
     # add file handler.
     file_handler = RotatingFileHandler(
-        './../../log/sample.log',
+        os.path.join(os.path.dirname(__file__), './../../log/trade.log'),
         mode="a",
         encoding='utf-8',
         maxBytes=1000000
