@@ -1,0 +1,7 @@
+database:
+  database_name: trade
+  database_type: mysql
+  user: admin
+  password: admin
+  host: db
+  port: 3306
